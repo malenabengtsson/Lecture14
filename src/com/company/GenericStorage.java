@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Collections;
+
 public class GenericStorage<T1, T2> {
     private T1 value1;
     private T2 value2;
@@ -41,4 +43,30 @@ public class GenericStorage<T1, T2> {
             return null;
         }
     }
+
+    public <T1 extends Number, T2 extends Number> float addNumbers(T1 num1, T2 num2) {
+        return num1.floatValue() + num2.floatValue();
+    }
+
+    public <T> T[] switchElement(T[] array, int index1, int index2) {
+        T temp = array[index1];
+        array[index1] = array[index2];
+        array[index2] = temp;
+        return array;
+
+    }
+
+    public <T1 extends Collections, T2 extends Collections> Collections getBiggestCollection(T1 item1, T2 item2) {
+        return null;
+    }
+
+    public <T extends Collections> Collections copyToOtherCollection(T c1, T c2) {
+        T temp = c1;
+        c1 = c2;
+        c2 = temp;
+        return c2;
+    }
 }
+
+
+
